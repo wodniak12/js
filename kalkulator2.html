@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="calculator">
+        <input type="text" id="wartosca" placeholder="wartosca" />
+        <input type="text" id="wartoscb" placeholder="wartoscb" />
+        <input type="text" id="result" placeholder="=" disabled="disabled" />
+        <button type="button" onclick="Calculator(this.innerHTML)">+</button> 
+        <button type="button" onclick="Calculator(this.innerHTML)">-</button>
+        <button type="button" onclick="Calculator(this.innerHTML)">x</button>   
+        <button type="button" onclick="Calculator(this.innerHTML)">:</button>
+    </form>
+    <script>
+        function Calculator(operator) 
+        {
+            var wartosca = document.getElementById('wartosca').value;
+            var wartoscb = document.getElementById('wartoscb').value;  
+         
+            switch(operator) 
+            {
+                case '+':
+                    var result = parseFloat(wartosca) + parseFloat(wartoscb);         
+                break;
+                case '-':
+                    var result = parseFloat(wartosca) - parseFloat(wartoscb);         
+                break;  
+                case 'x':
+                    var result = parseFloat(wartosca) * parseFloat(wartoscb);         
+                break;  
+                case ':':
+                    var result = parseFloat(wartosca) / parseFloat(wartoscb);         
+                break;    
+            }
+         
+            document.getElementById('result').value = '= ' + result;
+        }
+        </script>
+</body>
+</html>
